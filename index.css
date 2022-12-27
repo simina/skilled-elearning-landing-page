@@ -3,27 +3,60 @@
 /* -----------------------*/
 :root {
     /* colors */
-    /*--clr-dark-cyan: hsl(158, 36%, 37%);*/
-    /*--clr-cream: hsl(30, 38%, 92%);*/
-
+    --clr-very-dark-blue: hsl(233, 54%, 16%);
+    --clr-light-bleu: hsl(234, 25%, 52%);
+    --clr-grey: hsl(232, 10%, 56%);
+    --clr-very-pink: hsl(341, 92%, 62%);
     /*neutral*/
-    /*--clr-very-dark-blue: hsl(212, 21%, 14%);*/
-    /*--clr-dark-grayish-blue: hsl(228, 12%, 48%);*/
-    /*--clr-white: hsl(0, 0%, 100%);*/
+
+    /*--clr-very-dark-blue: hsl(212, 21%, 14%);    /*--clr-very-dark-blue: hsl(212, 21%, 14%);*/
+    --clr-light-pink: hsl(341, 100%, 83%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --clr-pink-gradient-end: hsl(322, 87%, 55%);
+    --clr-pink-gradiend-start: hsl(13, 100%, 64%);
+
+    --clr-bleu-gradient-start: hsl(237, 100%, 64%);
+    --clr-bleu-gradient-end: hsl(322, 87%, 55%);
 
     /* font-sizes */
-    /*--fs-700: 1.5rem;*/
-    /*--fs-500: 1rem;*/
+    /*--fs-700: 3.5rem;*/
+    /*--fs-500: 2.5rem;*/
+    /*--fs-300: 2rem;*/
+    /*--fs-200: 1.5rem;*/
 
     /* font-families */
-    /*--ff-montserrat: 'Montserrat', sans-serif;*/
-    /*--ff-fraunces: 'Fraunces', serif;  /*--ff-montserrat: 'Montserrat', sans-serif;*/
-    /*--ff-fraunces: 'Fraunces', serif;*/
-
+    --ff-plus-jakarta-sans: 'Plus Jakarta Sans'
 }
 
-*, *:before, *:after{
+.bg-very-dark-blue {
+    background-color: var(--clr-very-dark-blue);
+}
+
+.bg-gradient-orange-pink {
+    margin-top: 1.5rem;
+    width: 10.5rem;
+    background: linear-gradient(180deg, var(--clr-pink-gradiend-start) 0%, var(--clr-pink-gradient-end) 100%);
+}
+
+.bg-gradient-blue-pink{
+    background: linear-gradient(180deg, var(--clr-bleu-gradient-start) 0%, var(--clr-pink-gradient-end) 100%);
+}
+
+.cl-white {
+    color: var(--clr-white);
+}
+
+.cl-blue {
+    color: var(--clr-very-dark-blue);
+}
+
+*, *::before, *::after {
     box-sizing: border-box;
+}
+
+* {
+    margin: 0;
 }
 
 /* ------------------- */
@@ -33,11 +66,153 @@
 /* general */
 body {
     height: 100vh;
+    line-height: 1.5;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    font-family: var(--ff-plus-jakarta-sans);
+    font-style: normal;
+}
 
+.desc {
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    color: var(--clr-grey);
+    display: block;
 }
 
 /* ------------------- */
 /* Compontents         */
 /* ------------------- */
 
+.top {
+    padding: 1rem;
+}
 
+/* header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-skilled {
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 2.19rem;
+}
+
+
+.btn-first {
+    padding: 0.562rem 1.5rem;
+}
+
+/* main */
+
+h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+    margin-top: 2.375rem;
+}
+
+.main-desc {
+    margin-top: 1.625rem;
+}
+
+.btn-second {
+    padding: 0.8rem 2.375rem;
+}
+
+.btn-get-started {
+    color: var(--clr-white);
+    border-radius: 1.96rem;
+    border: none;
+
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.625rem;
+}
+
+.main-col-2 {
+    padding-top: 2.875rem
+}
+
+.main-img {
+    width: 100%;
+    min-height: 300px;
+    background: url("assets/image-hero-mobile.png") no-repeat;
+    background-size: cover;
+}
+
+
+/* details */
+.popular-courses {
+    margin-top: 4.125rem;
+    background: linear-gradient(180deg, var(--clr-pink-gradiend-start) 0%, var(--clr-pink-gradient-end) 100%);
+    padding: 1.5rem 1.95rem 2rem 1.75rem;
+
+    border-radius: 0.8rem;
+    border: none;
+    color: var(--clr-white);
+
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.details {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F0F1FF 100%);
+}
+
+.card:first-of-type {
+    margin-top: 3rem;
+}
+
+.card {
+    margin: 1rem;
+    /*border:1px solid red;*/
+
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+
+    background-color: var(--clr-white);
+    box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
+    border-radius: 10px;
+}
+
+.card-icon {
+    margin-top: -1.75rem;
+}
+
+h5 {
+    margin-top: 24px;
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.575rem;
+}
+
+.cta {
+    display: block;
+    padding-top: 1.625rem;
+    padding-bottom: 2rem;
+    text-decoration: none;
+    color: var(--clr-very-pink);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+footer {
+    margin-top: 5rem;
+    background-color: var(--clr-very-dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+}
